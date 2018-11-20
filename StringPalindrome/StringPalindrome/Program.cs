@@ -10,20 +10,19 @@ namespace StringPalindrome
     {
         static void Main(string[] args)
         {
-            string s, revs = "";
+            string s; 
+     
             Console.WriteLine(" Enter string");
             s = Console.ReadLine();
-            for (int i = s.Length - 1; i >= 0; i--) 
+
+            if (s[0] == s[s.Length - 1] ||s[0+1]==s[s.Length-2])
+                
             {
-                revs += s[i].ToString();
-            }
-            if (revs == s)
-            {
-                Console.WriteLine("String is Palindrome \n Entered String Was {0} \n reverse string is {1}", s, revs);
+                Console.WriteLine("String is Palindrome");
             }
             else
             {
-                Console.WriteLine("String is not Palindrome \n Entered String Was {0} \n reverse string is {1}", s, revs);
+                Console.WriteLine("String is not palindrome");
             }
             Console.ReadKey();
 
