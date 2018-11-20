@@ -6,40 +6,37 @@ using System.Threading.Tasks;
 
 namespace StringPalindrome
 {
-   public class Program
-    {
-        public void palindrome()
-        {
-            Console.WriteLine("the string is palindrome");
-        }
-        public void invalid()
-        {
-            Console.WriteLine("the string is not palindrome");
-        }
+  
+    public class Program
+    { 
         static void Main(string[] args)
         {
             string s;
            Console.WriteLine(" Enter string");
             s = Console.ReadLine();
-            Program program = new Program();
-            int i = s.Length;
-            int j = 0;
-            while (i > 0)
+            if(isPalindrome(s))
             {
-                    if (s[j++] == s[i- 1])
-                    {
-                        i--;
-                    }
-                    else
-                    {
-                        program.invalid();
-                        break;
-                    }
+                Console.WriteLine("Given string is palindrome");
+            } else
+            {
+                Console.WriteLine("Given string is not palindrome");
 
             }
-            program.palindrome();
+            Console.ReadLine();
+        }
 
-            Console.ReadKey();
+        public static bool isPalindrome(string input)
+        {
+            for (int i = 0; i < input.Length/2; i++)
+            {
+                if(input[i] != input[input.Length-1 -i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
+
+
 }
